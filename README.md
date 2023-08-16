@@ -4,6 +4,7 @@
 - [ ] 2D 或2.5D 地图
 - [ ] 减少/去除 NDT 计算矩阵中的零块
 ## 1. 前端 LIO
+```bash
 ./bin/run_frontend --config_yaml ./config/mapping.yaml
 # 生成地图
 ./bin/run_dump_map --pose_source=lidar
