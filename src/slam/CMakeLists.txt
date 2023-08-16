@@ -25,34 +25,20 @@ target_link_libraries(${PROJECT_NAME}.slam ${libraries})
 add_executable(run_frontend test/run_frontend.cc)
 target_link_libraries(run_frontend ${libraries} ${PROJECT_NAME}.slam)
 
-# add_executable(run_optimization run_optimization.cc)
-# target_link_libraries(run_optimization
-#         ${PROJECT_NAME}.ch9
-#         ${third_party_libs}
-#         )
+add_executable(run_dump_map test/run_dump_map.cc)
+target_link_libraries(run_dump_map ${libraries} ${PROJECT_NAME}.slam)
 
-# add_executable(run_loopclosure run_loopclosure.cc)
-# target_link_libraries(run_loopclosure
-#         ${PROJECT_NAME}.ch9
-#         ${third_party_libs}
-#         )
+add_executable(run_optimization test/run_optimization.cc)
+target_link_libraries(run_optimization ${libraries} ${PROJECT_NAME}.slam)
 
-# add_executable(run_mapping run_mapping.cc)
-# target_link_libraries(run_mapping
-#         ${PROJECT_NAME}.ch9
-#         ${third_party_libs}
-#         )
+add_executable(run_loopclosure test/run_loopclosure.cc)
+target_link_libraries(run_loopclosure ${libraries} ${PROJECT_NAME}.slam)
 
-# add_executable(dump_map dump_map.cc)
-# target_link_libraries(dump_map
-#         ${PROJECT_NAME}.ch9
-#         ${PROJECT_NAME}.common
-#         ${third_party_libs}
-#         )
+add_executable(run_split_map test/run_split_map.cc)
+target_link_libraries(run_split_map ${libraries} ${PROJECT_NAME}.slam)
 
-# add_executable(split_map split_map.cc)
-# target_link_libraries(split_map
-#         ${PROJECT_NAME}.ch9
-#         ${PROJECT_NAME}.common
-#         ${third_party_libs}
-#         )
+add_executable(run_mapping test/run_mapping.cc)
+target_link_libraries(run_mapping ${libraries} ${PROJECT_NAME}.slam)
+
+add_executable(run_fusion_offline test/run_fusion_offline.cc)
+target_link_libraries(run_fusion_offline ${libraries} ${PROJECT_NAME}.slam)

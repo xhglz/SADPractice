@@ -72,16 +72,16 @@ int main(int argc, char** argv) {
 
     // 存储点云和索引文件
     LOG(INFO) << "saving maps, grids: " << map_data.size();
-    std::system("mkdir -p ./data/result/map_data/");
-    std::system("rm -rf ./data/result/map_data/*");  // 清理一下文件夹
-    std::ofstream fout("./data/result/map_data/map_index.txt");
+    std::system("mkdir -p ./data/map_data/");
+    std::system("rm -rf ./data/map_data/*");  // 清理一下文件夹
+    std::ofstream fout("./data/map_data/map_index.txt");
     for (auto& dp : map_data) {
         fout << dp.first[0] << " " << dp.first[1] << std::endl;
         dp.second->width = dp.second->size();
         sad::VoxelGrid(dp.second, 0.1);
 
         sad::SaveCloudToFile(
-            "./data/result/map_data/" + std::to_string(dp.first[0]) + "_" + std::to_string(dp.first[1]) + ".pcd",
+            "./data/map_data/" + std::to_string(dp.first[0]) + "_" + std::to_string(dp.first[1]) + ".pcd",
             *dp.second);
     }
     fout.close();
