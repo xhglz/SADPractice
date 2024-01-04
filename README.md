@@ -1,4 +1,3 @@
-项目改自于高翔著作的《自动驾驶中与机器人中的SLAM技术》，参加完该书第一期课程后所整理。
 ## Features
 - [ ] NDT 匹配度
 - [ ] 2D 或2.5D 地图
@@ -29,8 +28,8 @@ python3 scripts/all_path.py ./data/result/keyframes.txt
 pcl_viewer data/result/map_data/*.pcd
 ```
 ![split](./data/images/split.png)
-## 5. 重定位
+## 5. 融合定位
 ```bash
-./bin/run_split_map
+./bin/run_fusion_offline
 ```
 ![reloc](./data/images/reloc.png)
